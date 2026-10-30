@@ -125,7 +125,7 @@ From the live `tools/list` (server version 0.3.2, 30 October 2026). Call `tools/
 
 ## Coverage and data sources
 
-**Law** (`find_law`, `get_law_link`, `list_sources`): search in EU (CELLAR), DE, EE, ES, AT, NL, PL, DK, LU, SE, IE, IT, LT, FR, CZ, FI, HR, LV and SI (FI, HR, LV, SI: curated core company, civil, notarial and tax acts); all 27 Member States return at least the official portal, its search link and ELI pattern.
+**Law** (`find_law`, `get_law_link`, `list_sources`): search in EU (CELLAR), DE, EE, ES, AT, NL, PL, DK, LU, SE, IE, IT, LT, FR, CZ, FI, HR, LV and SI (FI, HR, LV, SI: curated core company, civil, notarial and tax acts); all 27 Member States return at least the official portal, its search link and ELI pattern. Every law item has `status` (`in_force` | `repealed` | `unknown`, stated only where the official source gives it), `consolidated_url` (current consolidated version, or null), `checked_at` and `status_source`.
 
 **Company registers** (`get_company`, from the live [`/api/registries`](https://mandateoffice.com/api/registries), checked 2026-10-31):
 
