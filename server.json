@@ -2,13 +2,17 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.mandateoffice/mandate",
   "title": "Mandate Office",
-  "description": "EU legal toolbox for AI agents: EU and national law links, company registry data. Free, no API key.",
-  "version": "0.3.0",
+  "description": "EU legal toolbox for AI agents: EU/national law links, company registers, formation guides. Free.",
+  "version": "0.3.5",
   "websiteUrl": "https://mandateoffice.com",
   "remotes": [
     {
       "type": "streamable-http",
       "url": "https://mandateoffice.com/mcp"
     }
-  ]
+  ],
+  "repository": {
+    "url": "https://github.com/mandateoffice/mandate-mcp",
+    "source": "github"
+  }
 }

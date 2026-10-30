@@ -1,0 +1,15 @@
+{
+  "name": "eu-supplier-check",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Example agent: check an EU counterparty in the official business register, VIES and GLEIF through the Mandate MCP server.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node supplier-check.mjs",
+    "test": "node supplier-check.mjs FI 0112038-9 --vat FI01120389"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  }
+}

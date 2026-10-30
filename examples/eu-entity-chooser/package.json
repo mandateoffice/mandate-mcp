@@ -1,0 +1,15 @@
+{
+  "name": "eu-entity-chooser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Example agent: shortlist EU limited company forms against hard requirements (capital, online, notary, language) with sources, through the Mandate MCP server.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node entity-chooser.mjs",
+    "test": "node entity-chooser.mjs --max-capital 5000 --online"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  }
+}

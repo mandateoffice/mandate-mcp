@@ -9,7 +9,7 @@ This repository holds only the **client side**: documentation, connection exampl
 - Auth: none. Free during beta, no API key.
 - Read-only except the opt-in Mandate Lobby tools (see below)
 - Official MCP Registry name: `com.mandateoffice/mandate` ([server.json](server.json))
-- Agent notes: https://mandateoffice.com/llms.txt · Server card: https://mandateoffice.com/.well-known/mcp-server-card
+- Agent notes: https://mandateoffice.com/llms.txt · Pages: [registers](https://mandateoffice.com/registries/), [formation guides](https://mandateoffice.com/guides/) · Server card: https://mandateoffice.com/.well-known/mcp-server-card
 - Health: https://mandateoffice.com/api/health · Changelog: https://mandateoffice.com/api/changelog
 
 Operated by Saba ja Sarved OÜ, registry code 12759581, Estonia. Contact: info@mandateoffice.com
@@ -86,10 +86,14 @@ curl -s https://mandateoffice.com/mcp \
 | [`examples/node`](examples/node) | `@modelcontextprotocol/sdk` client over Streamable HTTP: lists the tools, calls `get_company` DK 24256790 |
 | [`examples/python`](examples/python) | `mcp` package (`mcp.Client`): same flow |
 | [`examples/curl.sh`](examples/curl.sh) | `initialize`, `tools/list` and `tools/call` as plain JSON-RPC |
+| [`examples/eu-supplier-check`](examples/eu-supplier-check) | Example agent: counterparty check in the official register, VIES and GLEIF, one JSON report with sources and factual flags |
+| [`examples/eu-entity-chooser`](examples/eu-entity-chooser) | Example agent: shortlist EU company forms by capital, online formation, notary and language; verified facts only, with sources |
 
 ```bash
 cd examples/node && npm install && node list-and-call.mjs            # or: node list-and-call.mjs EE 12759581
 cd examples/python && pip install -r requirements.txt && python list_and_call.py
+cd examples/eu-supplier-check && npm install && node supplier-check.mjs FI 0112038-9 --vat FI01120389
+cd examples/eu-entity-chooser && npm install && node entity-chooser.mjs --max-capital 5000
 ```
 
 ## Tools
