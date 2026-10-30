@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+package-lock.json
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Never commit secrets
+.env
+.env.*
+.dev.vars
+*.pem
+*.key
+secrets/
+.secrets/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

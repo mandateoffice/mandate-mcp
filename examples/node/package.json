@@ -1,0 +1,14 @@
+{
+  "name": "mandate-mcp-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "List Mandate's MCP tools and call get_company over Streamable HTTP.",
+  "license": "MIT",
+  "scripts": {
+    "start": "node list-and-call.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  }
+}
