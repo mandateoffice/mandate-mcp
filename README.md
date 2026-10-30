@@ -125,13 +125,13 @@ From the live `tools/list` (server version 0.3.2, 30 October 2026). Call `tools/
 
 ## Coverage and data sources
 
-**Law** (`find_law`, `get_law_link`, `list_sources`): search in EU (CELLAR), DE, EE, ES, AT, NL, PL, DK, LU, SE, IE, IT, LT and FR; all 27 Member States return at least the official portal, its search link and ELI pattern.
+**Law** (`find_law`, `get_law_link`, `list_sources`): search in EU (CELLAR), DE, EE, ES, AT, NL, PL, DK, LU, SE, IE, IT, LT, FR, CZ, FI, HR, LV and SI (FI, HR, LV, SI: curated core company, civil, notarial and tax acts); all 27 Member States return at least the official portal, its search link and ELI pattern.
 
-**Company registers** (`get_company`, from the live [`/api/registries`](https://mandateoffice.com/api/registries), checked 2026-10-30):
+**Company registers** (`get_company`, from the live [`/api/registries`](https://mandateoffice.com/api/registries), checked 2026-10-31):
 
-- Live lookup: EE, FR, CZ, FI, PL, LV, IE, HR, DK
+- Live lookup: EE, FR, CZ, FI, PL, LV, IE, HR, DK; NL by KVK number only (KVK open dataset, BV and NV; names get the kvk.nl link)
 - From official open bulk files (nightly snapshots, `data_as_of` in the answer): LT, SE, SI
-- Link only (official register URL plus matching LEI holders from GLEIF): AT, BE, BG, CY, DE, EL, ES, HU, IT, LU, MT, NL, PT, RO, SK
+- Link only (official register URL plus matching LEI holders from GLEIF): AT, BE, BG, CY, DE, EL, ES, HU, IT, LU, MT, PT, RO, SK
 - Everywhere: VAT numbers checked live in VIES, LEIs via GLEIF
 
 Licences as reported by the live service (each answer also carries its own `license` field):
@@ -150,6 +150,7 @@ Licences as reported by the live service (each answer also carries its own `lice
 | LT Registrų centras (JAR) | CC BY 4.0 |
 | SE Bolagsverket bulk file | Free, no agreement required; high-value dataset under Implementing Regulation (EU) 2023/138 |
 | SI AJPES Poslovni register | CC BY 4.0 |
+| NL KVK Open Dataset Basis Bedrijfsgegevens | CC BY 4.0; cite Kamer van Koophandel |
 | VIES (European Commission) | European Commission VIES service |
 | GLEIF LEI records | CC0 1.0 |
 | EU CELLAR (Publications Office) | Commission Decision 2011/833/EU (reuse allowed, acknowledge the source) |
@@ -165,6 +166,9 @@ Licences as reported by the live service (each answer also carries its own `lice
 | DK Retsinformation | Free use incl. commercial; must not suggest endorsement |
 | SE Riksdagens öppna data | Free use; cite "Källa: Sveriges riksdag" |
 | LU Legilux SPARQL | CC BY 4.0 (marked unverified by the service) |
+| CZ e-Sbírka open data (Ministry of the Interior) | NKOD terms: no copyright works, no database rights, no personal data |
+| FI Finlex open data | CC BY 4.0 |
+| HR Narodne novine, LV likumi.lv, SI PIS RS | Titles and links only (reuse terms not yet verified) |
 | PL Sejm ELI API | No licence published (marked unverified by the service) |
 
 Full per-country list with URLs: [`/api/sources`](https://mandateoffice.com/api/sources) or the `list_sources` tool.
