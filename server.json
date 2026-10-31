@@ -3,7 +3,7 @@
   "name": "com.mandateoffice/mandate",
   "title": "Mandate Office",
   "description": "EU legal toolbox for AI agents: EU/national law links, company registers, formation guides. Free.",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "websiteUrl": "https://mandateoffice.com",
   "remotes": [
     {
