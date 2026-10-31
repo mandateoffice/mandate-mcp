@@ -14,7 +14,7 @@ This repository holds only the **client side**: documentation, connection exampl
 - Agent notes: https://mandateoffice.com/llms.txt · Pages: [registers](https://mandateoffice.com/registries/), [formation guides](https://mandateoffice.com/guides/) · Server card: https://mandateoffice.com/.well-known/mcp-server-card
 - Health: https://mandateoffice.com/api/health · Changelog: https://mandateoffice.com/api/changelog
 
-Operated by Saba ja Sarved OÜ, registry code 12759581, Estonia. Contact: info@mandateoffice.com
+Operated by Nukehive OÜ, registry code 14647290, Estonia. Contact: info@mandateoffice.com
 
 ## Connect
 
