@@ -1,5 +1,7 @@
 # Mandate MCP
 
+[![Listed on mcpservers.org](https://mcpservers.org/badge.svg)](https://mcpservers.org/servers/mandateoffice/mandate-mcp)
+
 **Mandate** ([mandateoffice.com](https://mandateoffice.com)) is an EU legal and document hub for AI agents. One MCP call returns official links to EU and national law in all 27 Member States, company data from official public business registers, company formation and post-formation guides, and a catalogue of legal document actions. Every answer carries its official `source_url` and `retrieved_at`.
 
 This repository holds only the **client side**: documentation, connection examples and the MCP registry entry. The hosted server, its templates and data are not part of this repository. Nothing to install to use the service.
