@@ -126,25 +126,26 @@ cd examples/eu-entity-chooser && npm install && node entity-chooser.mjs --max-ca
 
 ## Tools
 
-From the live `tools/list` (server version 0.3.18, 25 November 2026). `https://mandateoffice.com/mcp` lists 13 core tools; each description starts with when to use it. Call `tools/list` for the full descriptions and input schemas.
+From the live `tools/list` (server version 0.3.20, 25 November 2026). `https://mandateoffice.com/mcp` lists 14 core tools; each has a human-readable `title`, and each description starts with when to use it. Call `tools/list` for the full descriptions and input schemas.
 
 | Tool | Use when the user asks … | Read-only |
 | --- | --- | --- |
-| `find_law` | for an EU or national law by title, topic, abbreviation or number | yes |
-| `get_law_link` | for the official link or in-force status of one act or article (CELEX, ELI, BOE id, `de:GmbHG`, French code article) | yes |
+| `find_law` | for an EU, national or UK law by title, topic, popular name (GDPR, AI Act, NIS2) or number | yes |
+| `find_case_law` | for a court decision by case name, subject, case number or ECLI (EU Court of Justice and General Court, NL, FR, DE; UK search links) | yes |
+| `get_law_link` | for the official link or in-force status of one act or article (CELEX, popular EU name, ELI, BOE id, `de:GmbHG`, `uk:ukpga/2006/46`, French code article) | yes |
 | `list_sources` | where an EU country publishes its official law, registers or legal open data | yes |
-| `get_company` | about a company in an EU business register: number, status, address, directors, VAT or LEI | yes |
+| `get_company` | about a company in an EU or UK business register: number, status, address, directors, VAT or LEI (other countries: GLEIF LEI data and the official register link) | yes |
 | `get_formation_guide` | how to set up a company in an EU country | yes |
 | `get_post_formation` | what a new company must register after formation (VAT, EORI, beneficial ownership, tax, social security) | yes |
 | `list_actions` | which legal document services Mandate Office offers | yes |
 | `quote_action` | what one legal action involves: steps, documents, who acts, price | yes |
 | `list_templates` | which standard document templates can be filled | yes |
 | `get_template` | to see one template's fields, clauses and legal basis | yes |
-| `fill_template` | to fill a standard document; incomplete fills come back as a watermarked draft | yes |
+| `fill_template` | to fill a standard document; incomplete fills come back as a watermarked draft | no (download links keep the fill data encrypted for 1 hour) |
 | `list_operations` | for a ready document package (GmbH, SRLS, EURL, Spanish auction power of attorney, apostille and translation) | yes |
 | `order_operation` | to fill an operation's documents and checklist from their input | yes |
 
-"Read-only" is the tool's `readOnlyHint` annotation. Partner-only actions and templates need a partner key; without one, `list_templates` currently lists no templates.
+"Read-only" is the tool's `readOnlyHint` annotation. Every tool also sets `destructiveHint` and `openWorldHint`; only `lobby_delete` is destructive. Partner-only actions and templates need a partner key; without one, `list_templates` currently lists no templates.
 
 ### Mandate Lobby (separate endpoint)
 
@@ -167,11 +168,11 @@ The same data is available as read-only REST lookups under `https://mandateoffic
 
 ## Coverage and data sources
 
-**Law** (`find_law`, `get_law_link`, `list_sources`): search in EU (CELLAR), DE, EE, ES, AT, NL, PL, DK, LU, SE, IE, IT, LT, FR, CZ, FI, HR, LV and SI (FI, HR, LV, SI: curated core company, civil, notarial and tax acts); all 27 Member States return at least the official portal, its search link and ELI pattern. Every law item has `status` (`in_force` | `repealed` | `unknown`, stated only where the official source gives it), `consolidated_url` (current consolidated version, or null), `checked_at` and `status_source`.
+**Law** (`find_law`, `get_law_link`, `list_sources`): search in EU (CELLAR), DE, EE, ES, AT, NL, PL, DK, LU, SE, IE, IT, LT, FR, CZ, FI, HR, LV and SI (FI, HR, LV, SI: curated core company, civil, notarial and tax acts); all 27 Member States return at least the official portal, its search link and ELI pattern. United Kingdom: legislation.gov.uk (Open Government Licence v3.0). Country accepts codes or names in any language (DE, Deutschland, UK). Every law item has `status` (`in_force` | `repealed` | `unknown`, stated only where the official source gives it), `consolidated_url` (current consolidated version, or null), `checked_at` and `status_source`.
 
 **Company registers** (`get_company`, from the live [`/api/registries`](https://mandateoffice.com/api/registries), checked 2026-10-31):
 
-- Live lookup: EE, FR, CZ, FI, PL, LV, IE, HR, DK; NL by KVK number only (KVK open dataset, BV and NV; names get the kvk.nl link)
+- Live lookup: EE, FR, CZ, FI, PL, LV, IE, HR, DK, GB (Companies House); NL by KVK number only (KVK open dataset, BV and NV; names get the kvk.nl link)
 - From official open bulk files (nightly snapshots, `data_as_of` in the answer): LT, SE, SI
 - Link only (official register URL plus matching LEI holders from GLEIF): AT, BE, BG, CY, DE, EL, ES, HU, IT, LU, MT, PT, RO, SK
 - Everywhere: VAT numbers checked live in VIES, LEIs via GLEIF
