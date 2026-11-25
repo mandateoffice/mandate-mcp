@@ -1,6 +1,7 @@
 # Mandate MCP
 
 [![Listed on mcpservers.org](https://mcpservers.org/badge.svg)](https://mcpservers.org/servers/mandateoffice/mandate-mcp)
+[![Mandate Office MCP connector](https://glama.ai/mcp/connectors/com.mandateoffice/mandate/badges/score.svg)](https://glama.ai/mcp/connectors/com.mandateoffice/mandate)
 
 **Mandate** ([mandateoffice.com](https://mandateoffice.com)) is an EU legal and document hub for AI agents. One MCP call returns official links to EU and national law in all 27 Member States, company data from official public business registers, company formation and post-formation guides, and a catalogue of legal document actions. Every answer carries its official `source_url` and `retrieved_at`.
 
